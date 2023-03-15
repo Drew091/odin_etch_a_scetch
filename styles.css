@@ -1,0 +1,32 @@
+body{
+  display: flex;
+  flex-direction: row;
+  margin:0;
+  min-width: 1200px;
+  height: 800px;
+  border: solid;
+
+  /*height: 100%;*/
+}
+
+#container{
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto
+  auto auto auto auto auto;
+  margin:0;
+  max-width: 80px;
+  height: 80px;
+}
+#square{
+  width: 20px;
+  height: 20px;
+  border: solid;
+  border-width: thin;
+}
+/*#square:hover{
+    background-color: black;
+}
+*/
+.black{
+  background-color: black;
+}
