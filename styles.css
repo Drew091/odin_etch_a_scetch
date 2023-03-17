@@ -10,18 +10,20 @@ body{
 }
 
 #container{
-  display:grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto
-  auto auto auto auto auto;
+  display:flex;
+  flex-wrap: wrap;
   margin:0;
-  max-width: 80px;
-  height: 80px;
+  width: 500px;
+  height: 500px;
+  border: solid;
+  Border-width: thin;
 }
-#square{
+#cell{
+  flex: auto;
   width: 20px;
   height: 20px;
-  border: solid;
-  border-width: thin;
+  /*border: solid;
+  border-width: thin;*/
 }
 /*#square:hover{
     background-color: black;

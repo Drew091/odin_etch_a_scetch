@@ -4,27 +4,23 @@ function colorBlack() {
 
 const container = document.getElementById("container");
 
-
-  function makeRow (rows) {
-    for (let i=0; i<rows; i++){
+function makeColumn (grid) {
+  for (let j=0; j<grid * grid; j++){
     let cells = document.createElement("div");
-    cells.setAttribute("id","square");
+    let squareWidth = 500/grid;
+    let squareHeight = squareWidth;
+    cells.style.width = squareWidth +"px";
+    cells.style.height = squareHeight +"px";
+    cells.setAttribute("id","cell");
     cells.addEventListener("mouseover", colorBlack);
     container.appendChild(cells)
-    }
-    }
-
-
-function makeColumn (columns) {
-  for (let j=0; j<columns; j++){
-    makeRow(16);
+  }
 }
-}
-makeColumn (16);
+makeColumn (40);
 
 
-https://dirask.com/posts/JavaScript-dynamically-create-grid-of-divs-using-flexbox-139abp
-https://stackoverflow.com/questions/68563516/add-event-listener-to-multiple-divs-with-same-class-in-a-container
+//https://dirask.com/posts/JavaScript-dynamically-create-grid-of-divs-using-flexbox-139abp
+//https://stackoverflow.com/questions/68563516/add-event-listener-to-multiple-divs-with-same-class-in-a-container
 
 //document.getElementById("square").addEventListener("mouseover", function() {
 //  document.getElementById("square").classList.add("black");
