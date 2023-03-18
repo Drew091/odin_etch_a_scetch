@@ -2,6 +2,15 @@ function colorBlack() {
   this.classList.add("black")
 }
 
+function random_rgba() {
+  let randomColor = "rgba(" + Math.round(Math.random()*255) + "," +
+  Math.round(Math.random()*255) + "," + Math.round(Math.random()*255) + "," +
+  Math.random().toFixed(1) + ")";
+
+  console.log(randomColor);
+   this.style.backgroundColor = randomColor;
+}
+
 const container = document.getElementById("container");
 
 function changeGrid () {
@@ -28,7 +37,7 @@ function makeGrid (grid) {
       cells.style.width = squareWidth +"px";
       cells.style.height = squareHeight +"px";
       cells.classList.add("cell");
-      cells.addEventListener("mouseover", colorBlack);
+      cells.addEventListener("mouseover", random_rgba);
       container.appendChild(cells)
     }
   }else{
