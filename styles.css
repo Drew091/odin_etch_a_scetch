@@ -1,6 +1,6 @@
 body{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin:0;
   min-width: 1200px;
   height: 800px;
@@ -9,6 +9,14 @@ body{
   /*height: 100%;*/
 }
 
+.gridButton {
+  width: 505.454px;
+  padding: 10px 0 10px 0;
+  background-color: #008CBA;
+  color: white;
+}
+
+
 #container{
   display:flex;
   flex-wrap: wrap;
@@ -16,13 +24,12 @@ body{
   width: 500px;
   height: 500px;
   border: solid;
-  Border-width: thin;
 }
-#cell{
+.cell{
   flex: auto;
-  width: 20px;
+  /*width: 20px;
   height: 20px;
-  /*border: solid;
+  border: solid;
   border-width: thin;*/
 }
 /*#square:hover{
