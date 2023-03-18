@@ -1,16 +1,21 @@
 const container = document.getElementById("container");
 let grid = 16;
+let coloredCells = 0;
+let everyTenthCell = 0;
 
-function colorBlack() {
-  this.classList.add("black")
-}
-
-function random_rgba() {
+function selectColor() {
   let randomColor = "rgba(" + Math.round(Math.random()*255) + "," +
-  Math.round(Math.random()*255) + "," + Math.round(Math.random()*255) + "," +
-  Math.random().toFixed(1) + ")";
+    Math.round(Math.random()*255) + "," + Math.round(Math.random()*255) + "," +
+    Math.random().toFixed(1) + ")";
 
-   this.style.backgroundColor = randomColor;
+  if(colorSwitchStatus == "Color" && everyTenthCell !== 9) {
+    this.style.backgroundColor = randomColor;
+  }else{
+    this.classList.add("black");
+  }
+
+  coloredCells++;
+  everyTenthCell = coloredCells%10;
 }
 
 function colorSwitch () {
@@ -48,6 +53,7 @@ function changeGrid () {
 
 function makeGrid (grid) {
   let gridBackup = grid;
+  console.log(everyTenthCell);
   if (grid <= 100) {
     for (let i=0; i<grid * grid; i++){
       let cells = document.createElement("div");
@@ -58,11 +64,7 @@ function makeGrid (grid) {
       cells.style.height = squareHeight +"px";
       cells.classList.add("cell");
       colorSwitchStatus = colorSwitch ();
-      if(colorSwitchStatus == "Color"){
-        cells.addEventListener("mouseover", random_rgba);
-      }else{
-        cells.addEventListener("mouseover", colorBlack);
-      }
+      cells.addEventListener("mouseover", selectColor);
       container.appendChild(cells)
     }
   }else{
